@@ -6,15 +6,16 @@ namespace CSV_Parse
     {
         static void Main()
         {
-            string path = "file.csv";
+            string path = "../../../example.csv";
             var separator = ';';
 
             var serializer = new CsvSerializer(separator);
 
             var movies = serializer.Read<Movie>(path);
 
-            serializer.Write("newFile.csv", movies);
+            serializer.Write("../../../newFile.csv", movies);
 
+            Console.Write("File created.");
             Console.ReadKey();
         }
     }
